@@ -34,11 +34,9 @@ impl KinduffDogApi {
     pub async fn get_kinduff_dog(&self, number_of_fact: Option<i32>) -> Result<KinduffDogApiResponse, reqwest::Error> {
         let mut url = self._base_url.join("/api/facts").unwrap();
 
-        if let Some(fact) = number_of_fact {
-            url.query_pairs_mut().append_pair(
-                "number",
-                number_of_fact.unwrap_or(1).to_string().as_str());
-        }
+        let fact = number_of_fact.unwrap_or(1);
+
+        url.query_pairs_mut().append_pair("number", &fact.to_string());
 
         let resp = self._client.get(url)
             .send()
