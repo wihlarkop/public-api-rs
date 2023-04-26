@@ -2,7 +2,6 @@ use reqwest::{Client, header, Url};
 use reqwest::header::{HeaderMap, USER_AGENT};
 use serde::{Deserialize, Serialize};
 
-
 #[derive(Serialize, Deserialize, Debug)]
 pub struct RandomDogApiResponse {
     #[serde(rename = "fileSizeBytes")]
