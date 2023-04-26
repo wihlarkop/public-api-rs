@@ -4,3 +4,4 @@ pub mod dog_ceo_api;
 pub mod random_dog;
 pub mod random_fox;
 pub mod random_duck;
+pub mod shibe_online;
